@@ -1,0 +1,204 @@
+@import './variables'; 
+@import './mixins';
+@import './heritage';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $primary__color;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $df__font__size;
+    color: $font__color;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+#l-sidebar {
+    @extend %l-sidebar;
+}
+
+.l-sidebar {
+    @extend %l-sidebar;
+
+    &--open {
+        transition: all .5s;
+        transform: translateX(0);
+    }
+
+    &--close {
+        transition: all .5s;
+        transform: translateX(-250px);
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        color: $font__color;
+        font-size: $font__btn__size;
+        position: fixed;
+        margin: 50px; 
+    }
+
+}
+
+#btn__close{
+    margin: 50px 20px ;
+}
+
+
+.l-page {
+    @include displayFlex(column, center, none);
+    min-height: 100vh;
+    padding: 50px;
+    width: 100%;
+
+    & .bg__profile {
+        background-image: url("https://br.pinterest.com/pin/618963542532743635/");
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+}
+
+
+.l-logo {
+    font-size: 1.8rem;
+    color: $font__color;
+    margin-bottom: 75px;
+}
+
+
+.l-content {
+    @include displayFlex(column, none, center);
+}
+
+.l-skills{
+    width: 100vw;
+    height: 40vh;
+}
+
+
+.c-sidebar {
+    @include displayFlex(column, none, none);
+    font-family: Arial Black, Arial, Helvetica, sans-serif;
+    gap: 25px;
+}
+
+.c-nav {
+    display: flex;
+    font-family: Arial Black, Arial, Helvetica, sans-serif;
+    gap: 25px;
+
+    &__item {
+        font-size: $df__font__size;
+        color: $font__color;
+        text-decoration: none;
+    }
+}
+
+
+.c-btn {
+    background-color: $secundary__color;
+    border: none;
+    border-radius: 5px;
+    color: $font__color;
+    font-family: Arial Black, Arial, sans-serif;
+    font-size: $df__font__size;
+    padding: 10px 15px;
+    text-decoration: none;
+    box-shadow: 5px 15px 15px 5px rgba(0, 0, 0, 0.75);
+}
+
+
+.c-form {
+    padding: 50px 0;
+    display: grid;
+    gap: 20px;
+    min-width: 40vw;
+
+    &__group{
+        @include displayFlex(column, none, center);
+        border-radius: 5px;
+    }
+
+    &__label{
+        @include displayFlex(column, none, center);
+        border-radius: 5px;
+    }
+
+    &__control{
+        @include displayFlex(column, none, center);
+        border-radius: 5px;
+    }
+
+    &__label {
+        font-size: .8rem;
+        margin-bottom: 5px;
+    }
+
+    &__control {
+        padding: 10px;
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+.contatosFlex {
+    @include displayFlex(column, none, center);
+}
+
+.title {
+    color: $secundary__color;
+    font-size: $font__title;
+}
+
+.description {
+    color: $font__color;
+    font-size: $font__description;
+}
+
+.u-mx-1 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.u-mx-2 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.u-mx-3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.u-my-1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.u-my-2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.u-my-3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+.teste{
+    margin-top: 150px;
+}
+
+.error{
+    color: rgb(209, 9, 9);
+}
